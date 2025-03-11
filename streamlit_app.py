@@ -38,7 +38,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Add the logo image at the top left corner
+st.image('your_image_logo.png', width=100)
 st.markdown('<img src="your_image_logo.png" class="logo">', unsafe_allow_html=True)
 
 # Set the title of the app
