@@ -5,7 +5,7 @@ import numpy as np
 # Load the trained model and scaler
 diabetes_model = pickle.load(open('calories_xgb_model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
-st.image("your_image_logo.png", width=200)  
+st.markdown('<img src="your_image_logo.png" class="logo">', unsafe_allow_html=True)
 # Set the title and some introduction text
 st.title("🔥 Diabetes Prediction App 🔥")
 
