@@ -40,6 +40,9 @@ st.markdown(
     """, unsafe_allow_html=True
 )
 
+# Add an image
+st.image("your_image_logo.png", width=200)
+
 # Getting the input data from USER
 st.subheader("Enter the following details:")
 
