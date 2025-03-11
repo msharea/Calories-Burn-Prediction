@@ -64,19 +64,19 @@ if st.button("Get Results", key="predict_button"):
     # Create a NumPy array from the inputs
     input_data = np.array([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
 
-    # Print the shape to check dimensions
-    st.write("Shape of input data:", input_data.shape)
+    # Ensure the input data is a 2D array (1 row, 8 columns/features)
+    st.write("Shape of input data:", input_data.shape)  # This will show (1, 8)
 
     # Apply the scaler transformation
     try:
-        input_data_scaled = scaler.transform(input_data)
+        input_data_scaled = scaler.transform(input_data)  # Apply scaling
     except Exception as e:
         st.write("Error in scaling the input data:", e)
     
     # Make the prediction
     diab_pred = diabetes_model.predict(input_data_scaled)
 
-    # Display the result with a nice format
+    # Display the result
     if diab_pred[0] == 0:
         diab_diagnosis = "❌ The person is NOT diabetic."
         st.success(diab_diagnosis)  # Use success for non-diabetic
