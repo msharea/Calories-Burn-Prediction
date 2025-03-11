@@ -11,21 +11,28 @@ st.title("🔥 Diabetes Prediction App 🔥")
 st.markdown("""
 Welcome to the Diabetes Prediction App! This app will help you predict whether a person is diabetic based on certain medical features.
 Fill in the details below and hit 'Get Results' to see the prediction.
-""")
+""", unsafe_allow_html=True)
 
-# Add a background color or image (optional)
+# Add custom styling
 st.markdown(
     """
     <style>
     .stApp {
-        background-color: #F0F8FF;
+        background-color: #f0f8ff;
+    }
+    .stTitle, .stHeader, .stSubheader, .stText {
+        color: #1f1f1f;
+    }
+    .stButton>button {
+        background-color: #007bff;
+        color: white;
+    }
+    .stButton>button:hover {
+        background-color: #0056b3;
     }
     </style>
     """, unsafe_allow_html=True
 )
-
-# Add a logo or image (optional)
-st.image("your_image_logo.png", width=200)
 
 # Getting the input data from USER
 st.subheader("Enter the following details:")
