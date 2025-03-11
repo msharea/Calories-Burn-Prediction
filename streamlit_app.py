@@ -6,7 +6,7 @@ import pickle
 FeaturesToBeScaled = ['Age', 'Weight', 'Height', 'Duration', 'Heart_Rate', 'Calories']
 
 
-model = pickle.load(open('Models/calories_xgb_model.pkl', 'rb'))
+model = pickle.load(open('calories_xgb_model.pkl', 'rb'))
 scaler = pickle.load(open('Scaler.pkl', 'rb'))
 
 
