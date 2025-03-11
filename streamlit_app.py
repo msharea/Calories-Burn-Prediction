@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load the trained model and scaler
-diabetes_model = pickle.load(open('diabetes_model.pkl', 'rb'))
+diabetes_model = pickle.load(open('calories_xgb_model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 st.header("Diabetes Prediction App")
