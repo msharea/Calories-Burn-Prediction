@@ -28,15 +28,16 @@ st.markdown("""
     .stTextInput>div>label {
         color: #ffffff;
     }
-    /* Add a custom position for the logo */
     .logo {
         position: absolute;
         top: 20px;
         left: 20px;
-        width: 100px;  /* You can change this size to your liking */
+        width: 80px;
     }
     </style>
 """, unsafe_allow_html=True)
+
+# Add the logo image at the top left corner using st.image
 st.image('your_image_logo.png', width=80, use_column_width=False, output_format="PNG", caption="", help="Logo", key="logo", )
 
 # Set the title of the app
