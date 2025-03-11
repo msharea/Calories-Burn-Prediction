@@ -37,9 +37,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
-st.image('your_image_logo.png', width=100)
-st.markdown(class="logo">', unsafe_allow_html=True)
+st.image('your_image_logo.png', width=80, use_column_width=False, output_format="PNG", caption="", help="Logo", key="logo", )
 
 # Set the title of the app
 st.title("🔥 Diabetes Prediction App 🔥")
