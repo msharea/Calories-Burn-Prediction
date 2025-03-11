@@ -69,17 +69,20 @@ if st.button("Get Results", key="predict_button"):
 
     # Apply the scaler transformation
     try:
+        # Ensure the input data is 2D before transforming
         input_data_scaled = scaler.transform(input_data)  # Apply scaling
     except Exception as e:
         st.write("Error in scaling the input data:", e)
     
     # Make the prediction
-    diab_pred = diabetes_model.predict(input_data_scaled)
-
-    # Display the result
-    if diab_pred[0] == 0:
-        diab_diagnosis = "❌ The person is NOT diabetic."
-        st.success(diab_diagnosis)  # Use success for non-diabetic
-    else:
-        diab_diagnosis = "✅ The person is diabetic."
-        st.error(diab_diagnosis)  # Use error for diabetic
+    try:
+        diab_pred = diabetes_model.predict(input_data_scaled)
+        # Display the result
+        if diab_pred[0] == 0:
+            diab_diagnosis = "❌ The person is NOT diabetic."
+            st.success(diab_diagnosis)  # Use success for non-diabetic
+        else:
+            diab_diagnosis = "✅ The person is diabetic."
+            st.error(diab_diagnosis)  # Use error for diabetic
+    except Exception as e:
+        st.write("Error in prediction:", e)
