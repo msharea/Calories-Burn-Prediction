@@ -7,7 +7,7 @@ FeaturesToBeScaled = ['Age', 'Weight', 'Height', 'Duration', 'Heart_Rate', 'Calo
 
 
 model = pickle.load(open('calories_xgb_model.pkl', 'rb'))
-scaler = pickle.load(open('Scaler.pkl', 'rb'))
+scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 
 st.title('Calories Burn Prediction Web App')
