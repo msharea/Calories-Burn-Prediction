@@ -5,21 +5,9 @@ import numpy as np
 # Load the trained model and scaler
 diabetes_model = pickle.load(open('calories_xgb_model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
-st.markdown('<img src="your_image_logo.png" class="logo">', unsafe_allow_html=True)
+
 # Set the title and some introduction text
-st.title("🔥 Diabetes Prediction App 🔥")
-
-# Add the logo image (make sure the image is in the same directory as the script or provide the correct path)
-
-
 st.markdown("""
-Welcome to the Diabetes Prediction App! This app will help you predict whether a person is diabetic based on certain medical features.
-Fill in the details below and hit 'Get Results' to see the prediction.
-""", unsafe_allow_html=True)
-
-# Add custom styling
-st.markdown(
-    """
     <style>
     .stApp {
         background-color: #000000;
@@ -40,9 +28,25 @@ st.markdown(
     .stTextInput>div>label {
         color: #ffffff;
     }
+    /* Add a custom position for the logo */
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 100px;  /* You can change this size to your liking */
+    }
     </style>
-    """, unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
+
+# Add the logo image at the top left corner
+st.markdown('<img src="your_image_logo.png" class="logo">', unsafe_allow_html=True)
+
+# Set the title of the app
+st.title("🔥 Diabetes Prediction App 🔥")
+st.markdown("""
+Welcome to the Diabetes Prediction App! This app will help you predict whether a person is diabetic based on certain medical features.
+Fill in the details below and hit 'Get Results' to see the prediction.
+""", unsafe_allow_html=True)
 
 # Getting the input data from USER
 st.subheader("Enter the following details:")
