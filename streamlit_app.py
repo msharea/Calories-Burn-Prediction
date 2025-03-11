@@ -18,10 +18,10 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #f0f8ff;
+        background-color: #000000;
     }
-    .stTitle, .stHeader, .stSubheader, .stText {
-        color: #1f1f1f;
+    .stTitle, .stHeader, .stSubheader, .stText, .stMarkdown {
+        color: #ffffff;
     }
     .stButton>button {
         background-color: #007bff;
@@ -29,6 +29,12 @@ st.markdown(
     }
     .stButton>button:hover {
         background-color: #0056b3;
+    }
+    .stNumberInput>div>label {
+        color: #ffffff;
+    }
+    .stTextInput>div>label {
+        color: #ffffff;
     }
     </style>
     """, unsafe_allow_html=True
@@ -57,9 +63,15 @@ st.write("### Click below to get the results:")
 if st.button("Get Results", key="predict_button"):
     # Create a NumPy array from the inputs
     input_data = np.array([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
-    
+
+    # Print the shape to check dimensions
+    st.write("Shape of input data:", input_data.shape)
+
     # Apply the scaler transformation
-    input_data_scaled = scaler.transform(input_data)
+    try:
+        input_data_scaled = scaler.transform(input_data)
+    except Exception as e:
+        st.write("Error in scaling the input data:", e)
     
     # Make the prediction
     diab_pred = diabetes_model.predict(input_data_scaled)
