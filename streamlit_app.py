@@ -8,6 +8,10 @@ scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 # Set the title and some introduction text
 st.title("🔥 Diabetes Prediction App 🔥")
+
+# Add the logo image (make sure the image is in the same directory as the script or provide the correct path)
+st.image("your_image_logo.png", width=200)  # تأكد من أن الصورة موجودة في المجلد نفسه
+
 st.markdown("""
 Welcome to the Diabetes Prediction App! This app will help you predict whether a person is diabetic based on certain medical features.
 Fill in the details below and hit 'Get Results' to see the prediction.
@@ -39,9 +43,6 @@ st.markdown(
     </style>
     """, unsafe_allow_html=True
 )
-
-# Add an image
-st.image("your_image_logo.png", width=200)
 
 # Getting the input data from USER
 st.subheader("Enter the following details:")
